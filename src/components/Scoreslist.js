@@ -17,7 +17,7 @@ class Scorelist extends Component {
   }
   
   fetchUsers = () => {
-    fetch(SERVER_URL + 'users/search/findAllByOrderByScoreDesc')
+    fetch(SERVER_URL + 'api/users/search/findAllByOrderByScoreDesc')
     .then(response => response.json())
       .then(responseData => {
         this.setState({
@@ -30,7 +30,7 @@ class Scorelist extends Component {
 
   // Add new score
  addScore(user) {
-    fetch(SERVER_URL + 'users', 
+    fetch(SERVER_URL + 'api/users', 
       { method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
